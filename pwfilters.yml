@@ -1,0 +1,18 @@
+---
+- name: Playing with Filters
+  host: localhost
+  gather_facts: no
+
+  vars:
+          movielist: [mockingjay,catchingfire,hungergames]
+
+  tasks:
+          - name: Longer named movies
+            debug:
+              msg: "Show me the movies by longest name order in the list: '{{ movielist|length }}'"
+
+
+
+
+
+
