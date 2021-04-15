@@ -14,7 +14,7 @@ sw-2
 ; variables specific to arista switches
 ansible_network_os=eos
 ansible_user=admin
-ansible_ssh_pass=alta3
+ansible_ssh_pass=alta3    
 
 [renamed]
 bugs      ansible_host=10.10.2.3 ansible_user=bender ansible_python_interpreter=/usr/bin/python3
@@ -22,6 +22,18 @@ daffy         ansible_host=10.10.2.4 ansible_user=fry ansible_python_interpreter
 elmer    ansible_host=10.10.2.5 ansible_user=zoidberg ansible_python_interpreter=/usr/bin/python3
 taz  ansible_host=10.10.2.6 ansible_user=farnsworth ansible_ssh_pass=alta3
 
+[aristaswitchessecure]
+; description of our arista inventory
+sw-1         ansible_host=sw-1
+sw-2         ansible_host=sw-2
+    
+[aristaswitchessecure:vars]
+; variables specific to arista switches
+ansible_network_os=eos
+ansible_connection=network_cli
+ansible_become=yes
+ansible_become_method=enable
+ansible_user=admin    
 
 
 
